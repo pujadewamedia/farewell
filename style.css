@@ -161,12 +161,12 @@
 
 /* Menetapkan gambar spesifik untuk Ivan */
 #ivan.profile-picture-kata {
-  background-image: url('images/people/ivan.JPG');
+  background-image: url('https://i.postimg.cc/VvRxZ1pY/ivan.jpg');
 }
 
 /* Menetapkan gambar spesifik untuk Farkhan */
 #farkhan.profile-picture-kata {
-  background-image: url('images/people/farkhan.JPG');
+  background-image: url('https://i.postimg.cc/44LwPmFY/farkhan.jpg');
 }
 
 .nama-kata-p{
