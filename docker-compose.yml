@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  memories-website:
+    build: .
+    container_name: memories-website
+    restart: unless-stopped
+    ports:
+      - "2516:80" # Port diubah dari 8088 ke 2516
+    volumes:
+      - ./:/var/www/html/
+    networks:
+      - mariadb
+
+networks:
+  mariadb:
+    external: true

@@ -1,0 +1,116 @@
+@import '../_config.css';
+
+/* Semua teks default pakai DM Sans */
+body {
+  font-family: 'DM Sans', sans-serif;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  height: 100vh;
+  margin: 0px 0px 0px 10%;
+  position: relative; /* penting biar ::before nempel */
+  overflow: hidden;
+}
+
+/* Layer background pakai pseudo-element */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../images/bglogin.png') no-repeat center center fixed;
+  background-size: cover;
+  z-index: -1; /* tetap di belakang konten */
+  transition: filter 0.3s ease;
+}
+
+/* Blur hanya background */
+body.blur-bg::before {
+  filter: blur(8px);
+}
+
+
+
+/* Container login */
+.login-container {
+  text-align:left;
+  position: relative;
+  z-index: 10; /* pastikan di atas background */
+}
+
+/* Judul khusus pakai ITC Garamond */
+.login-container h2 {
+  font-family: 'ITC Garamond Std', serif;
+  font-size: 5rem;
+  font-weight: 400;
+  text-align: left;
+  margin-bottom: var(--gap-children);
+  color: #111827;
+  letter-spacing: 0.5px;
+}
+
+/* Input style modern */
+.login-container input {
+  font-family: inherit; 
+  display: block;
+  width: 250px;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.2); /* semi transparan */
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  color: #111827;
+}
+
+.login-container input:focus {
+  border: 2px solid #e1fffb;
+}
+
+/* GANTI BLOK CSS BUTTON LAMA DENGAN YANG INI */
+.login-container button {
+  width: 20%; /* Sesuaikan lebar sesuai keinginan Anda */
+  padding: 12px;
+  margin-top: 20px;
+  
+  /* --- EFEK BLUR LIQUID GLASS --- */
+  background-color: rgba(255, 255, 255, 0.15); /* Background putih semi-transparan */
+  border: 1px solid rgba(255, 255, 255, 0.2);  /* Border putih semi-transparan */
+  backdrop-filter: blur(10px);               /* Efek blur pada background di belakang tombol */
+  -webkit-backdrop-filter: blur(10px);       /* Untuk kompatibilitas Safari */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Sedikit bayangan untuk kedalaman */
+  
+  color: #111827; /* Ubah warna teks menjadi gelap agar kontras dengan background terang */
+  font-weight: bold; /* Teks lebih tebal */
+  
+  border-radius: 25px; /* Tetap dengan border-radius yang bulat */
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Transisi untuk semua properti */
+
+  display: flex; /* Untuk menengahkan ikon */
+  justify-content: center; /* Untuk menengahkan ikon */
+  align-items: center; /* Untuk menengahkan ikon */
+}
+
+.login-container button:hover {
+  background-color: rgba(57, 255, 31, 0.45); /* Sedikit lebih terang saat hover */
+  box-shadow: 0 6px 8px rgba(57, 255, 31, 0.15); /* Bayangan sedikit lebih besar saat hover */
+  transform: translateY(-2px); /* Efek sedikit terangkat saat hover */
+  
+}
+
+/* Pastikan ikon di dalam tombol juga berwarna gelap */
+.login-container button .material-symbols-rounded {
+    color: #111827; /* Warna ikon mengikuti teks tombol */
+    font-size: 24px; /* Sesuaikan ukuran ikon jika perlu */
+}
+
+.login-container button:hover .material-symbols-rounded {
+    color: #ffffff; /* Warna ikon mengikuti teks tombol */
+    font-size: 24px; /* Sesuaikan ukuran ikon jika perlu */
+}

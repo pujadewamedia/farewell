@@ -1,0 +1,213 @@
+@import '_config.css';
+
+/* ============================================= */
+/* ===== GOOGLE MATERIAL ICONS (ROUNDED) ======= */
+/* ============================================= */
+.material-symbols-rounded {
+  font-variation-settings:
+    'FILL' 1,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+}
+
+/* ============================================= */
+/* ===== GAYA BARU UNTUK CAROUSEL MEMORIES ===== */
+/* ============================================= */
+
+.core-memories-container.swiper {
+  width: 70%; 
+  height: 500px; 
+}
+
+.swiper-slide {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  width: 75%;
+  max-width: 500px; 
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+  transition: transform 0.4s ease, opacity 0.4s ease;
+  opacity: 0.5;
+  transform: scale(0.9);
+
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.memories-image,
+.swiper-slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+}
+
+.memories-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  color: white;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), rgba(0,0,0,0));
+  border-radius: 0 0 15px 15px;
+}
+
+.memories-title-date {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.memories-title {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.memories-separator {
+  color: #ebebeb;
+}
+
+.memories-date {
+  font-family: 'ITC Garamond Std', serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+.memories-description {
+  font-family: 'DM Sans', sans-serif;
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #ddd;
+}
+
+/* ============================== */
+/* === PAGINATION & NAVIGASI ==== */
+/* ============================== */
+.swiper-pagination.swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+  background: var(--color-red, #e74c3c) !important;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  color: white !important;
+}
+
+/* ============================== */
+/* === CUSTOM CONTROL CAROUSEL === */
+/* ============================== */
+
+.carousel-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+}
+
+.carousel-btn-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.carousel-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  background-color: #efeff2;
+  color: #1d1d1f;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: #f2f2f2;
+}
+
+.memories-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carousel-progress-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #efeff2;
+  padding: 1rem;
+  border-radius: 3rem;
+}
+
+.carousel-progress {
+  flex: 1;
+  min-width: 100px;
+  max-width: 150px;
+  height: 0.5rem;
+  background: #707073;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.carousel-progress .progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #1d1d1f;
+  transition: width 0.1s linear;
+}
+
+/* ============================== */
+/* ===== FEEDBACK ICON VIDEO ===== */
+/* ============================== */
+.memories-video-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-mute-feedback {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  color: white;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  padding: 20px;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.video-mute-feedback.show {
+  opacity: 1;
+}
+
+/* Responsive tweak */
+@media (max-width: 768px) {
+  .carousel-controls {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .carousel-progress {
+    width: 150px;
+  }
+}

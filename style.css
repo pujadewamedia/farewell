@@ -1,0 +1,602 @@
+@import '_config.css';
+
+.container{
+  display:flex;
+  flex-direction: column;
+  overflow-x: hidden;
+
+  background-color: #ffffff;
+}
+
+/* ============================================= */
+/* ===== GAYA BARU UNTUK SECTION-1         ===== */
+/* ============================================= */
+
+.section-1 {
+  width: 100%;
+  height: 100vh;
+  display: flex; /* Gunakan flexbox untuk layout berdampingan */
+  
+  /* PENTING: Membuat kedua anak elemen (teks dan gambar) meregang setinggi section-1 */
+  align-items: stretch; 
+  
+  position: relative;
+  isolation: isolate;
+  color: white; 
+  
+  /* Hapus flex-direction dan justify-content/gap dari sini */
+}
+
+/* Lapisan background blur di belakang semuanya (tidak berubah) */
+.section-1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1; 
+  background: #2c3e50 url('images/bgsection1.png') no-repeat center center/cover;
+  filter: blur(5px) brightness(0.8);
+}
+
+/* GAYA BARU untuk blok teks di sebelah kiri */
+.section-1-text {
+  /* Alokasikan 60% lebar untuk area teks */
+  flex: 0 0 60%;
+  
+  /* Gunakan flexbox lagi untuk memusatkan paragraf di dalamnya */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  /* Beri padding agar teks tidak menempel ke tepi */
+  padding: 4rem;
+  box-sizing: border-box; /* Pastikan padding tidak menambah lebar */
+
+  /* Aturan font */
+  font-weight: bold;
+  font-size: 3rem;
+  line-height: 1.4;
+}
+
+/* GAYA BARU untuk blok gambar di sebelah kanan */
+/* GAYA BARU untuk blok gambar di sebelah kanan (DESKTOP) */
+.section-1-image {
+  flex: 1;
+  
+  /* Gunakan variabel untuk desktop sebagai default */
+  background-image: var(--bg-desktop);
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.section-2 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  gap: 4rem;
+
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.row-prekata{
+  display: flex;
+  height: 20%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  padding: 4rem 0rem;
+  
+}
+
+.prekata{
+  font-size: 3rem;
+  text-align: center;
+
+  background: linear-gradient(90deg, #5991e4, #13c7ec, #f3d24e);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+
+  animation: gradientShift 2s infinite alternate ease-in-out;
+}
+
+
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+.row-kata{
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  margin: 0px 2rem;
+  
+
+}
+
+.box-row-kata {
+  display: flex;
+  background-color: #efeff2;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  gap: 1rem;
+
+  /* TAMBAHKAN INI: Membuat setiap box memiliki lebar yang sama rata */
+  flex: 1;
+}
+
+/* (Opsional) Sedikit penyesuaian untuk layout di .row-kata-atas */
+.row-kata-atas {
+  display: flex;
+  align-items: center; /* Membuat nama dan foto sejajar di tengah */
+  gap: 15px; /* Memberi jarak antara foto dan nama */
+}
+
+.profile-picture-kata {
+  width: 60px;  /* Atur lebar foto */
+  height: 60px; /* Atur tinggi foto */
+  
+  /* PENTING: Membuat bentuknya menjadi lingkaran */
+  border-radius: 50%;
+  
+  /* Properti background agar foto pas dan di tengah */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* (Opsional) Garis tepi agar terlihat lebih menonjol */
+  border: 3px solid white;
+}
+
+/* Menetapkan gambar spesifik untuk Ivan */
+#ivan.profile-picture-kata {
+  background-image: url('images/people/ivan.JPG');
+}
+
+/* Menetapkan gambar spesifik untuk Farkhan */
+#farkhan.profile-picture-kata {
+  background-image: url('images/people/farkhan.JPG');
+}
+
+.nama-kata-p{
+  font-size: 1.5rem;
+}
+.row-kata-bawah{
+  display: flex;
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+
+
+.section-3 {
+  width: 100%;
+  min-height: 100vh; /* Diubah */
+  
+  /* Opsional tapi direkomendasikan: ganti justify-content dengan padding */
+  justify-content: flex-start; /* Mulai dari atas */
+  padding-top: 4rem; /* Beri jarak dari atas */
+  padding-bottom: 4rem; /* Beri jarak di bawah */
+  box-sizing: border-box; /* Agar padding tidak menambah tinggi total */
+}
+
+.memories-opener{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-memories-opener{
+  font-size: 3rem;
+  text-align: center;
+}
+
+.core-memories {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 3.5rem;
+  margin-bottom:2.5rem;
+}
+
+.core-memories-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem; 
+  overflow-x: auto; 
+  padding: 1rem;
+}
+
+
+.maskot-kiri,
+.maskot-kanan {
+  /* PENTING: Beri ukuran pada div agar gambar terlihat */
+  width: 250px;  /* Anda bisa sesuaikan ukurannya */
+  height: 400px; /* Anda bisa sesuaikan ukurannya */
+
+  /* Pastikan seluruh gambar muat di dalam div tanpa terpotong */
+  background-size: contain;
+
+  /* Jangan ulangi gambar */
+  background-repeat: no-repeat;
+
+  /* Posisikan gambar di tengah div */
+  background-position: center;
+}
+
+/* Atur gambar spesifik untuk masing-masing div */
+.maskot-kiri {
+  background-image: url('images/maskotkiri.png');
+}
+
+.maskot-kanan {
+  background-image: url('images/maskotkanan.png');
+}
+
+
+/* Posisi Navigasi */
+.floating-nav {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+
+  margin-right: 25px;
+  margin-bottom: 25px;
+
+  /* 3. Padding di dalam navbar */
+  padding: 12px;
+
+  /* 4. Tampilan Gaussian Blur dan Transparan */
+  background-color: rgba(255, 255, 255, 0.3); /* Warna putih dengan 30% opacity */
+  backdrop-filter: blur(10px); /* Efek blur pada background */
+  -webkit-backdrop-filter: blur(10px); /* Untuk support browser Safari */
+  
+  /* Styling Tambahan */
+  border-radius: 20px; /* Membuat sudut lebih tumpul */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Garis tepi tipis agar terlihat */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+  
+  /* Mengatur tata letak tombol di dalamnya */
+  display: flex;
+  gap: 10px; /* Memberi jarak antar tombol */
+}
+
+/* Kontainer utama untuk efek hover */
+.logout-container {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden; /* SANGAT PENTING: untuk menyembunyikan elemen yang bergeser keluar */
+  cursor: pointer;
+
+  /* Latar belakang awal */
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  
+  /* Transisi untuk warna latar belakang */
+  transition: background-color 0.4s ease;
+}
+
+/* Styling untuk kedua state (initial dan hover) agar konsisten */
+.logout-container .initial-state,
+.logout-container .hover-state {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  
+  /* Transisi untuk pergerakan (transform) dan visibilitas (opacity) */
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+/* Pengaturan Link di dalam tombol */
+.logout-container a {
+  text-decoration: none;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* --- LOGIKA ANIMASI SLIDE --- */
+
+/* 1. Posisi Awal (Sebelum Hover) */
+
+.logout-container .initial-state {
+  transform: translateY(0); /* Diam di tempat */
+  opacity: 1; /* Terlihat */
+}
+.logout-container .initial-state a {
+  color: #333;
+}
+
+.logout-container .hover-state {
+  /* Posisikan persis di atas initial-state */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* Mulai dari atas (di luar pandangan) */
+  transform: translateY(-100%); 
+  opacity: 0; /* Tidak terlihat */
+  text-decoration: none;
+  color: white;
+}
+.logout-container .hover-state a,
+.logout-container .hover-state .material-symbols-outlined {
+  color: white;
+}
+.logout-container .hover-state .material-symbols-outlined {
+  font-size: 20px;
+  margin-left: 8px;
+}
+
+
+/* 2. Aksi Saat Hover */
+
+/* Saat kontainer di-hover, ubah warna latar belakang */
+.logout-container:hover {
+  background-color: var(--color-red); /* Merah */
+}
+
+/* Saat di-hover, geser initial-state ke bawah hingga menghilang */
+.logout-container:hover .initial-state {
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+/* Saat di-hover, geser hover-state ke posisi semula (turun ke dalam pandangan) */
+.logout-container:hover .hover-state {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* ================================= */
+/* ===== CSS UNTUK TRANSISI HALAMAN (VERSI BARU) ===== */
+/* ================================= */
+
+/* Keyframes untuk animasi fade-in konten utama */
+@keyframes fadeInContent {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Keyframes untuk animasi slide-in-up navigasi */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%); /* Mulai dari bawah layar */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Selesai di posisi normalnya */
+  }
+}
+
+/* Keyframes BARU khusus untuk animasi di tengah (mode smartphone) */
+@keyframes slideInUpCentered {
+  from {
+    opacity: 0;
+    /* Mulai dari bawah DAN sudah di tengah secara horizontal */
+    transform: translateX(-50%) translateY(100%);
+  }
+  to {
+    opacity: 1;
+    /* Selesai di posisi normal DAN tetap di tengah secara horizontal */
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Terapkan animasi ke elemen secara spesifik, BUKAN ke body */
+.container {
+  animation: fadeInContent 0.6s ease-out;
+}
+
+.floating-nav {
+  /* Atur kondisi awal sebelum animasi dimulai untuk mencegah 'lompatan' */
+  opacity: 0; 
+  /* Terapkan animasi slide-in dengan sedikit jeda (delay) */
+  animation: slideInUp 0.5s ease-out 0.3s forwards;
+}
+
+/* Class untuk animasi Fade-Out (tetap sama, tidak perlu diubah) */
+body.fade-out {
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
+}
+
+.section-4 {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+
+  background-image: url('images/bgsection4.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  color: white; 
+}
+
+.kangenmedia{
+  background-color:#13c7ec;
+  padding: 2rem;
+  font-size: 3rem;
+  text-align: center;
+}
+
+/* ======================================================= */
+/* ===== Perubahan untuk Layar Smartphone (Responsive) ===== */
+/* Gaya ini hanya akan aktif jika lebar layar 768px atau kurang */
+/* ======================================================= */
+
+/* ======================================================= */
+/* ===== Perubahan untuk Layar Smartphone (Responsive) ===== */
+/* Gaya ini hanya akan aktif jika lebar layar 768px atau kurang */
+/* ======================================================= */
+
+@media (max-width: 768px) {
+  .section-1 {
+    flex-direction: column;
+  }
+
+  .section-1-content{
+    
+  }
+
+  /* Atur ulang ukuran blok teks untuk mobile */
+  .section-1-text {
+    width: 100%; /* Buat lebar menjadi 100% */
+    height: 40vh; /* Alokasikan 40% dari tinggi layar untuk teks */
+    flex: none; /* Hapus aturan flex basis dari mode desktop */
+    text-align: center; /* Pusatkan teks */
+    font-size: 1.8rem; /* Kecilkan font agar pas di layar kecil */
+    padding: 2rem; /* Sesuaikan padding */
+  }
+
+
+
+  /* Atur ulang ukuran blok gambar untuk mobile */
+  /* Di dalam @media (max-width: 768px) */
+  .section-1-image {
+    flex: none;
+    width: 100%;
+    height: 60vh;
+
+    /* GANTI 'background-size' & 'background-position' LAMA DENGAN INI */
+    
+    /* Gunakan variabel untuk mobile saat layar kecil */
+    background-image: var(--bg-mobile);
+    
+    /* Aturan agar gambar 1:1 (cover) dan dari atas */
+    background-size: cover;
+    background-position: center top; 
+  }
+
+  /* 1. Pindahkan Navigasi ke Tengah Bawah */
+  .floating-nav {
+    left: 80%;
+    right: auto;
+    bottom: 20px;
+    margin-right: 0;
+
+    /* --- PERBAIKANNYA DI SINI --- */
+    /* HAPUS 'transform: translateX(-50%);' dari sini */
+    
+    /* GANTI animasi default dengan animasi yang sudah dicentering */
+    animation-name: slideInUpCentered;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0.3s;
+    animation-fill-mode: forwards;
+  }
+
+  /* (Sisa kode media query Anda di bawah ini tidak perlu diubah) */
+
+  /* Kontainer utama sebagai pembungkus layout flex */
+  .logout-container {
+    display: flex;
+    background-color: transparent;
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    overflow: hidden;
+  }
+
+  /* Bagian Nama Pengguna (Kiri) */
+  .logout-container .initial-state {
+    background-color: rgba(20, 20, 20, 0.85);
+    border-radius: 15px 0 0 15px;
+    flex: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 15px;
+  }
+  .logout-container .initial-state a {
+    color: white;
+    text-decoration: none;
+  }
+
+  /* Bagian Logout (Kanan) */
+  .logout-container .hover-state {
+    background-color: #e74c3c;
+    border-radius: 0 15px 15px 0;
+    flex: 2;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: white;
+    display: grid;
+    place-items: center;
+  }
+  
+  .logout-container .hover-state .logout-text {
+    display: none;
+  }
+
+  .logout-container .initial-state,
+  .logout-container .hover-state {
+    position: static;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .logout-container:hover {
+    background-color: transparent;
+  }
+
+  .logout-container:hover .initial-state,
+  .logout-container:hover .hover-state {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .row-kata{
+    flex-direction: column;
+  }
+
+  .core-memories{
+    flex-direction: column;
+  }
+  .maskot-kiri,.maskot-kanan{
+    display: none;
+  }
+
+  .text-memories-opener{
+    font-size: 2rem;
+    text-align: center;
+  }
+  .section-2 {
+    gap: 2rem;
+    margin: 3rem 0rem;
+  }
+  .section-4 {
+    justify-content: center;
+  }
+}
